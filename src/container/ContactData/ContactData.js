@@ -6,6 +6,8 @@ import "./ContactData.css";
 import axios from "../../axios";
 import Input from "../../components/UI/Input/Input";
 
+import ImageUploader from "react-images-upload";
+
 class ContactData extends Component {
   state = {
     formData: {
@@ -49,6 +51,18 @@ class ContactData extends Component {
         },
         valid: false,
       },
+      identificationNumber: {
+        elementType: "input",
+        elementConfig: {
+          type: "text",
+          placeholder: "Pesel lub NIP",
+        },
+        value: "",
+        validation: {
+          required: true,
+        },
+        valid: false,
+      },
       personType: {
         elementType: "select",
         elementConfig: {
@@ -64,8 +78,12 @@ class ContactData extends Component {
     },
     formIsValid: false,
     loading: false,
-    author: "Nihat Benli",
+    picture: [],
     error: false,
+  };
+
+  onDrop = (picture) => {
+    this.setState({ picture: picture });
   };
 
   checkValidity(value, rules) {
@@ -164,6 +182,11 @@ class ContactData extends Component {
         <small className="smallText">
           Upewnij się że wypełniłeś wszystko żeby przycisk zadziała
         </small>
+        <ImageUploader
+          withIcon={true}
+          onChange={this.onDrop}
+          maxFileSize={5242880}
+        />
         {form}
       </div>
     );
