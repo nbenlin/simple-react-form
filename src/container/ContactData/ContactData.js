@@ -147,7 +147,9 @@ class ContactData extends Component {
 
   render() {
     let messageToUser = (
-      <p className="errorMessage">Upps coś poszło nie tak :(</p>
+      <p className="errorMessage">
+        Nie znaleziono metody zapisu, przepraszamy :(
+      </p>
     );
     if (this.state.error) {
     }
