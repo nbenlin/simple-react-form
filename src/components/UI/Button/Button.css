@@ -1,0 +1,19 @@
+.Button {
+    background-color: #001927;
+    border: 2px solid #F6F9FA;
+    border-radius: 10px;
+    display:inline-block;
+    cursor:pointer;
+    color:#F6F9FA;
+    font-size:18px;
+    font-weight: normal;
+    padding:10px 28px;
+    letter-spacing: .8px;
+    transition: .5s;
+    outline: none;
+}
+
+.Button:hover {
+    background-color: #F6F9FA;
+    color: #001927;
+}
