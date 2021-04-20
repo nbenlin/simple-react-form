@@ -80,6 +80,7 @@ class ContactData extends Component {
     loading: false,
     picture: [],
     error: false,
+    author: "Nihat Benli"
   };
 
   onDrop = (picture) => {
@@ -151,8 +152,6 @@ class ContactData extends Component {
         Nie znaleziono metody zapisu, przepraszamy :(
       </p>
     );
-    if (this.state.error) {
-    }
     const formElementsArray = [];
     for (let key in this.state.formData) {
       formElementsArray.push({
